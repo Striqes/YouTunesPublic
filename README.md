@@ -28,7 +28,7 @@ Group Members:
     Zafaralla, Russell Renz B.
 
 
-In Fullfilment of IT 163 Final Project
+In Fullfilment of IT 142 | SYSTEM INTEGRATION AND ARCHITECTURE | Final Project
 
 Mariano Marcos State University
 
