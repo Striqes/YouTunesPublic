@@ -1,0 +1,259 @@
+/* styles.css */
+
+/* === Global Reset & Layout === */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2E3057;
+  color: #FFF5F1;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* === Headings & Text === */
+h1 {
+  font-size: 6rem;
+  font-weight: 300;
+  margin: 0 0 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.footer-text {
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+.footer-text a {
+  color: #FFF5F1;
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+.footer-text a:hover {
+  text-decoration: underline;
+}
+
+/* === Buttons & Links === */
+.btn {
+  background-color: #FFF5F1;
+  color: #000;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+  display: block;         
+  margin: 1.5rem auto 0;   
+}
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* override for MoodPicker “Next” button */
+.main-content .btn {
+  background: #fff;
+  color: #0E2148;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* Logout button style (if you ever use .logout) */
+.logout {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  cursor: pointer;
+}
+.logout:hover {
+  text-decoration: underline;
+}
+
+/* === Navbar === */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 60px;
+  background: #0E2148;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+.navbar .nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar .logo {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+}
+
+.navbar a,
+.navbar button {
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.navbar a:hover,
+.navbar button:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* === Main Content Wrapper === */
+.main-content {
+  padding-top: 80px; /* give space for fixed navbar */
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* === Mood Picker Styles === */
+.mood-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 3px solid #FFF5F1;
+  border-radius: 15px;
+  margin: 2rem auto;
+}
+
+.mood-wrapper .label-top,
+.mood-wrapper .label-bottom,
+.mood-wrapper .label-left,
+.mood-wrapper .label-right {
+  position: absolute;
+  color: #FFF5F1;
+  font-weight: 500;
+}
+.mood-wrapper .label-top {
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.mood-wrapper .label-bottom {
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.mood-wrapper .label-left {
+  top: 50%;
+  left: -3rem;
+  transform: translateY(-50%);
+}
+.mood-wrapper .label-right {
+  top: 50%;
+  right: -4rem;
+  transform: translateY(-50%);
+}
+
+/* Invisible zones (for logic only) */
+.mood-zone {
+  position: absolute;
+  width: 33.33%;
+  height: 33.33%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#emoji {
+  position: absolute;
+  cursor: grab;
+  user-select: none;
+  font-size: 2rem;
+  z-index: 2;
+}
+#emoji:active {
+  cursor: grabbing;
+}
+
+#current-mood {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  color: #FFF5F1;
+}
+
+/* === Genre Picker (if you still need it in the same file) === */
+.picker-container {
+  padding: 2rem;
+}
+.picker-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.picker-container .genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 800px;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.picker-container .genre-btn {
+  border: 2px solid #FFF5F1;
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  background: transparent;
+  transition: background-color 0.2s, color 0.2s;
+  color: #FFF5F1;
+}
+.picker-container .genre-btn.selected {
+  background-color: #FFF5F1;
+  color: #2E3057;
+}
+.picker-container label {
+  font-size: 1rem;
+}
+.picker-container .count-input {
+  width: 4rem;
+  padding: 0.5rem;
+  border: 2px solid #FFF5F1;
+  border-radius: 8px;
+  background: transparent;
+  color: #FFF5F1;
+  font-size: 1rem;
+  text-align: center;
+  margin-left: 0.5rem;
+}
+.picker-container .controls {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  align-items: center;
+}
+.picker-container .controls .btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+}
+.picker-container .controls .btn:hover {
+  background-color: #ffecec;
+  opacity: 1;
+}
