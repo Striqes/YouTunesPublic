@@ -13,6 +13,12 @@ How to run:
 
     After which, Open browser go to localhost:3000 to run the web app.
 
+
+APIs used
+
+    Last.fm API - Used to search for the songs based on the genre and mood of the user. (Inputted)
+    Spotify API - Actual api used to preview/play songs, and build playlists (Spotify Playlists only).
+
 Group Members:
 
     Asuncion, Lucky Emmanuelle M.
@@ -26,6 +32,7 @@ Group Members:
     Villanueva, Ces Jerome R.
     
     Zafaralla, Russell Renz B.
+
 
 
 In Fullfilment of IT 142 | SYSTEM INTEGRATION AND ARCHITECTURE | Final Project
